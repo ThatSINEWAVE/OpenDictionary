@@ -53,17 +53,23 @@ function fetchDefinition() {
           data.forEach(entry => {
             const wordHeader = document.createElement('div');
             wordHeader.classList.add('word-header');
+            const phoneticText = entry.phonetics && entry.phonetics.find(phonetic => phonetic.text) ? entry.phonetics.find(phonetic => phonetic.text).text : 'N/A';
+            const audioPhonetic = entry.phonetics.find(phonetic => phonetic.audio);
+            const audioUrl = audioPhonetic ? (audioPhonetic.audio.startsWith('//') ? 'https:' + audioPhonetic.audio : audioPhonetic.audio) : null;
+
             wordHeader.innerHTML = `
               <h2 class="word">${entry.word}</h2>
-              <p class="phonetic">${entry.phonetics && entry.phonetics.find(phonetic => phonetic.text) ? entry.phonetics.find(phonetic => phonetic.text).text : 'N/A'}</p>
-              ${entry.phonetics && entry.phonetics.some(phonetic => phonetic.audio) ? `<button class="audio-btn"><i class="fas fa-volume-up"></i></button>` : `<button class="audio-btn" disabled><i class="fas fa-volume-mute"></i></button>`}
+              <p class="phonetic">${phoneticText}</p>
+              <button class="audio-btn" ${audioUrl ? '' : 'disabled'}>
+                <i class="fas fa-volume-${audioUrl ? 'up' : 'mute'}"></i>
+              </button>
             `;
             resultContainer.appendChild(wordHeader);
 
             const originElement = document.createElement('div');
             originElement.classList.add('origin');
             originElement.innerHTML = `
-              <strong>Origin:</strong> <span class="origin-text">${entry.origin || 'N/A'}</span>
+              <strong>Origin:</strong> <span class="origin-text">${entry.origin ? entry.origin : 'N/A'}</span>
             `;
             resultContainer.appendChild(originElement);
 
@@ -88,16 +94,11 @@ function fetchDefinition() {
             resultContainer.appendChild(meaningsContainer);
 
             const audioBtn = wordHeader.querySelector('.audio-btn');
-            if (audioBtn) {
-              const audioPhonetic = entry.phonetics.find(phonetic => phonetic.audio);
-              if (audioPhonetic) {
-                audioBtn.addEventListener('click', () => {
-                  const audio = new Audio(audioPhonetic.audio);
-                  audio.play();
-                });
-              } else {
-                audioBtn.disabled = true;
-              }
+            if (audioBtn && audioUrl) {
+              audioBtn.addEventListener('click', () => {
+                const audio = new Audio(audioUrl);
+                audio.play();
+              });
             }
           });
         }
