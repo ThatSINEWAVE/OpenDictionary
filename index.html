@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OpenDictionary</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="light-theme">
+
+  <header>
+    <h1>OpenDictionary</h1>
+    <nav>
+      <a href="https://github.com/your-github-repo" target="_blank"><button><i class="fab fa-github"></i> GitHub</button></a>
+      <a href="https://your-support-link" target="_blank"><button><i class="fas fa-heart"></i> Support</button></a>
+      <a href="https://your-discord-link" target="_blank"><button><i class="fab fa-discord"></i> Discord</button></a>
+      <button id="themeBtn"><i class="fas fa-adjust"></i> <span id="themeText">Dark</span></button>
+    </nav>
+  </header>
+
+  <div class="container">
+    <div class="search-box">
+      <input type="text" placeholder="Enter a word" id="wordInput">
+      <button id="searchBtn"><i class="fas fa-search"></i></button>
+    </div>
+    <div id="resultContainer">
+      <!-- Word and Phonetic -->
+      <div class="word-header">
+        <h2 class="word"></h2>
+        <p class="phonetic"></p>
+        <button class="audio-btn" disabled><i class="fas fa-volume-mute"></i></button>
+      </div>
+
+      <!-- Origin -->
+      <div class="origin">
+        <strong>Origin:</strong> <span class="origin-text"></span>
+      </div>
+
+      <!-- Meanings -->
+      <div class="meanings"></div>
+    </div>
+  </div>
+
+    <footer class="footer">
+      <div class="footer-section">
+        <a href="https://dictionaryapi.dev/" target="_blank">Powered by Free Dictionary API</a>
+      </div>
+    </footer>
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>
