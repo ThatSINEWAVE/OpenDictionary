@@ -4,6 +4,8 @@
 
 OpenDictionary is a web application that allows users to search for word definitions using the Free Dictionary API. The application features a light/dark theme switcher, phonetic pronunciation, origin, and detailed meanings including synonyms and antonyms. It is hosted on GitHub Pages, making it accessible to anyone.
 
+![OpenDictionary](https://github.com/ThatSINEWAVE/OpenDictionary/assets/133239148/e07ae9ab-3eee-492b-87e1-b2a9048842a6)
+
 </div>
 
 <div align="center">
