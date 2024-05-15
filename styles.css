@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* General Styles */
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Light Theme */
+body.light-theme {
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+/* Dark Theme */
+body.dark-theme {
+  background-color: #1a1a1a;
+  color: #f5f5f5;
+}
+
+.container {
+  background-color: inherit;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  padding: 40px;
+  max-width: 600px;
+  width: 100%;
+  text-align: center;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  margin: auto;
+  margin-top: 40px;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: inherit;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 28px;
+}
+
+header nav {
+  display: flex;
+  align-items: center;
+}
+
+header nav button {
+  margin-left: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+header nav button:hover {
+  background-color: #0056b3;
+}
+
+header nav button i {
+  margin-right: 5px;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+/* Light Theme Scrollbar */
+body.light-theme::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+body.light-theme::-webkit-scrollbar-thumb {
+  background-color: #007bff;
+  border-radius: 6px;
+}
+
+body.light-theme::-webkit-scrollbar-thumb:hover {
+  background-color: #0056b3;
+}
+
+.footer {
+  background-color: transparent;
+  margin-top: 40px;
+  margin-bottom: 10px;
+  padding: 10px;
+  text-align: center;
+  z-index: 999;
+}
+
+.footer a {
+  color: #black;
+  text-decoration: none;
+}
+
+/* Search Box */
+.search-box {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+#wordInput {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px 0 0 4px;
+  flex: 1;
+  transition: border-color 0.3s ease;
+}
+
+body.dark-theme #wordInput {
+  border-color: #444;
+  color: #f5f5f5;
+  background-color: #1a1a1a;
+}
+
+#searchBtn {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#searchBtn:hover {
+  background-color: #0056b3;
+}
+
+/* Result Container */
+#resultContainer {
+  text-align: left;
+  padding: 5px;
+}
+
+/* Word Header */
+.word-header {
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 10px;
+}
+
+.word {
+  font-size: 36px;
+  margin: 0;
+  margin-right: 10px;
+}
+
+.phonetic {
+  font-size: 18px;
+  color: #666;
+  margin: 0;
+}
+
+/* Audio Button */
+.audio-btn {
+  background-color: transparent;
+  border: none;
+  color: #007bff;
+  cursor: pointer;
+  font-size: 18px;
+  margin-left: 10px;
+  padding: 0;
+  transition: color 0.3s ease;
+}
+
+.audio-btn:hover {
+  color: #0056b3;
+}
+
+.audio-btn:disabled {
+  color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Origin */
+.origin {
+  margin-bottom: 20px;
+  font-size: 14px;
+  color: #666;
+}
+
+/* Meanings */
+.meanings {
+  margin-bottom: 20px;
+}
+
+.meaning {
+  margin-bottom: 10px;
+}
+
+.meaning h3 {
+  margin-top: 0;
+  margin-bottom: 5px;
+  font-size: 18px;
+}
+
+.definition {
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+}
+
+body.dark-theme .definition {
+  background-color: #333;
+  color: #f5f5f5;
+}
+
+body.dark-theme .footer a {
+  color: white;
+  text-decoration: none;
+}
+
+/* Dark Theme Scrollbar */
+body.dark-theme::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+body.dark-theme::-webkit-scrollbar-thumb {
+  background-color: #007bff;
+  border-radius: 6px;
+}
+
+body.dark-theme::-webkit-scrollbar-thumb:hover {
+  background-color: #0056b3;
+}
