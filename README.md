@@ -28,6 +28,7 @@ This project is powered by the [Free Dictionary API](https://dictionaryapi.dev/)
 
 - [PayPal](https://www.paypal.com/paypalme/paytosuraj)
 - [Buy Me a Coffee](https://buymeacoffee.com/meetdeveloper)
+- [Github](https://github.com/meetDeveloper/freeDictionaryAPI)
 
 Your support helps keep the **Free Dictionary API** running and available for everyone.
 
